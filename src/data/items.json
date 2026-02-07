@@ -1,5 +1,116 @@
 [
   {
+    "name": "Red's Rags",
+    "slots": ["EQUIP"],
+    "blurb": "",
+    "desc": "Use: A piece of equipment, equipped in any slot. Can be tied on or left loose.",
+    "tags": ["Ribbon"]
+  },
+  {
+    "name": "Belts & Straps",
+    "slots": ["EQUIP"],
+    "blurb": "",
+    "desc": "Use: Worn in any slot. Slotted weapon is drawn if default weapon is discarded, disarmed."
+  },
+  {
+    "name": "Escape Rope, Crimson",
+    "slots": ["EQUIP"],
+    "blurb": "",
+    "desc": "Use: Immediately end a Path and return home. If worn as equipment, can be used at any time, even when an incoming attack is imminent. 2d4 cycle cooldown. Refreshes instantly if you kill an intelligent being."
+  },
+  {
+    "name": "Whimper Doll",
+    "slots": ["TRINKET"],
+    "blurb": "",
+    "desc": "Trinket: Equipped in any slot. Costs you one morale at the start and end of any expedition. 16% chance any incoming curses or morale gains are absorbed by the doll. After three absorptions, evolves."
+  },
+  {
+    "name": "Wolf Fur Shirt",
+    "slots": ["M"],
+    "blurb": "",
+    "desc": "Equipment: Emotion-altering effects have a chance to invoke rage instead. Morale loss can sometimes be shrugged off, at cost of worsening banes or berserk rage (with adjustments to some decision making options and dialogue). Reminds you of the Wolf.",
+    "tags": ["Wolf"]
+  },
+  {
+    "name": "Cadet's Chinstrap",
+    "slots": ["TM"],
+    "blurb": "",
+    "desc": "Use: Worn in top middle slot. Any number of cards given by [Cadet] set cards or provided by guns can be added to the card pool instead of replacing cards. They semi-randomly have Ready, Aim, and Fire printed on them. Get a sequence of three to shoot the enemy and get a Bullet consumable. Gives: [Take Cover]",
+    "tags": ["Gun"],
+    "cards": ["D|take_cover"]
+  },
+  {
+    "name": "Repression Mask",
+    "slots": ["TL"],
+    "blurb": "",
+    "desc": "Equipment: Top Left. You lose the ability to see more than a small portion of the map at a time, but gain a 5% chance to evade things you’re unaware of. Horrorfied item, increases rate of horror interactions, may have other effects. Grants: [Forget]",
+    "cards": ["D|forget"]
+  },
+  {
+    "name": "Queensguard Treads",
+    "slots": ["BR"],
+    "blurb": "",
+    "desc": "Equipment: Bottom right slot. Defensive pips not natively on your cards are duplicated, one slot clockwise. If you wore this into combat and get a boon upgrade at expedition end, you can stop one boon upgrade that appears from ever recurring. If you get past the halfway point in a Path, you can gain or lose one boon exp for a boon on your mastery tree. Grants: [Crown Jewels]",
+    "tags": ["Queen"],
+    "cards": ["A|crown_jewels"]
+  },
+  {
+    "name": "Still Ripple Bangle",
+    "slots": ["ML", "BL"],
+    "blurb": "",
+    "desc": "Equipment: Middle left or bottom left. Draw a line through equipment that goes one up, two right; Links to that equipment if it’s water based or related to water. Currently grants: [Slip] There is more to this. Ask an elementalist?",
+    "cards": ["D|slip"]
+  },
+  {
+    "name": "Rain Mask",
+    "slots": ["UL", "UM"],
+    "blurb": "",
+    "desc": "Equipment: Upper left or upper middle. When you are near a water feature that has been described or is a natural part of that environment, you may gain 1◈ (power) that expires almost immediately. Once per feature. Weather affects your percentage rolls less. There’s more to this. Ask an elementalist?"
+  },
+  {
+    "name": "Neck Ribbon",
+    "slots": ["TL"],
+    "blurb": "",
+    "desc": "Equipment: Top left. Upgrade all equipped ribbon items and used ribbon consumables by half this item’s value, rounded down. Lower other equipped item values by this item’s value. Destroyed or dropped ribbon items offer a ribbon consumable. Ribbon card plays upgrade one subsequent ribbon cards that combat.",
+    "tags": ["Ribbon"]
+  },
+  {
+    "name": "Coin Slivers",
+    "slots": ["TRINKET"],
+    "blurb": "",
+    "desc": "Equipment: Trinket, any slot. Rolls for the value of found items and assets are 2L12, not 3L12, until an item with a value of 5 or higher is generated."
+  },
+  {
+    "name": "Marching Shako",
+    "slots": ["TR"],
+    "blurb": "",
+    "desc": "Equip: Defensive equipment, top right slot. Your combat advantage can default to the lower of combo and March items equipped. Grants: [Flourish]",
+    "tags": ["Order"],
+    "cards": ["D|flourish"]
+  },
+  {
+    "name": "March Flair",
+    "slots": ["TRINKET"],
+    "blurb": "",
+    "desc": "Use: Equipment, worn in any slot. At the end of a round, if you have advantage, lose half your card combo and either do that much damage to a foe or heal that much. Destroyed if tapped for power.",
+    "tags": ["Order"]
+  },
+  {
+    "name": "Marching Shirt",
+    "slots": ["M"],
+    "blurb": "",
+    "desc": "Equipment: Equipped in the middle row. Every 10th card played in combat counts as being aimed in all directions for purposes of combo. Combat-type and Conflict gear of other fields count as half a piece of March equipment",
+    "tags": ["Order"]
+  },
+  {
+    "name": "Would-Be Hero's Cape",
+    "slots": ["ML"],
+    "blurb": "",
+    "desc": "Equipment: Middle-left slot. When you have [Set] ❤‘s remaining, upgrade your offensive cards. Grants: [Power Up]",
+    "tags": ["Hero"],
+    "cards": ["power_up"]
+  },
+  {
     "name": "Axe Coin",
     "slots": ["W"],
     "blurb": "",
@@ -57,6 +168,30 @@
     ]
   },
   {
+    "name": "Disphura",
+    "slots": ["BR"],
+    "blurb": "",
+    "desc": "Equipment: Occupies bottom-right equip slot. Also occupies a center- column mastery slot when worn. Leaves slots temporarily unusable if taken off. Has a progression mechanic. Part of a set. Upgrade up to three combat cards with feet depicted. Can hop to an adjacent node once per expedition, if you have route to walk there. Grants: [Vault] [Fading]",
+    "tags": ["Adversary"],
+    "cards": ["A|vault", "A|fading"]
+  },
+  {
+    "name": "Dos Dispora",
+    "slots": ["BR"],
+    "blurb": "",
+    "desc": "Equipment: Occupies bottom-right equip slot. Also occupies a center- column mastery slot when worn. Leaves slots temporarily unusable if taken off. Has a progression mechanic. Part of a set. Upgrade all combat cards with feet depicted. Can hop to nearby node once per expedition, if you have route to walk there. Grants: [Four kicks] [Vault] [Fading]",
+    "tags": ["Adversary"],
+    "cards": ["A|four_kicks", "D|vault", "D|fading"]
+  },
+  {
+    "name": "Dus Diaspora",
+    "slots": ["BR"],
+    "blurb": "",
+    "desc": "Equipment: Occupies bottom-right equip slot. Also occupies a center- column mastery slot when worn. Leaves slots temporarily unusable if taken off. Has a progression mechanic. Part of a set. Significantly upgrade all combat cards with feet depicted. Can hop to nearby node once per expedition, if you have route to walk there. Grants: [Four kicks] [Vault] [Fade Away]",
+    "tags": ["Adversary"],
+    "cards": ["A|four_kicks", "D|vault", "D|fade_away"]
+  },
+  {
     "name": "Dais Doaspeiri",
     "slots": "BR",
     "blurb": "",
@@ -103,6 +238,14 @@
     "cards": ["A|clothesline", "A|spike", "feeling_lost"]
   },
   {
+    "name": "Clockwork Lion Pelt",
+    "slots": ["MR"],
+    "blurb": "",
+    "desc": "Equipment: Rightmost middle slot. Has no effect. Spend a key to unlock defensive properties (cannot take more than 1 damage from a source) discard any number of cards, and gain stone lion cards in their place. After, roll 1d4; on a 1, lower this item’s value. One a 3-4, raise it by 1. Grants: [Feeling Lost] ",
+    "tags": ["Manners"],
+    "cards": ["feeling_lost"]
+  },
+  {
     "name": "Handbag",
     "slots": ["ROW_M", "ROW_B"],
     "blurb": "",
@@ -122,5 +265,59 @@
     "blurb": "",
     "desc": "Equipment: Top Right. Dogs are plants and vice-versa. On a chain of 9 linked labels, all items are consumed & evolve. Eating meat invokes a minor card effect and vice-versa. ",
     "tags": ["Dog", "Plant"]
+  },
+  {
+    "name": "Marching Jacket",
+    "slots": ["MR"],
+    "blurb": "",
+    "desc": "Use: Middle right slot only; Grants max HP equal to highest card combo achieved, to max of [Marching Uniform pieces]. Expires at end of combat. Grants: [Twirl Weapon]",
+    "tags": ["Order"],
+    "cards": ["D|twirl_weapon"]
+  },
+  {
+    "name": "Swordpoint Axe",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Equip: Weapon, attacks hit both lane above and lane below. [Draw Axe] [Spade Blade Divide] [Axe Blade Cleave] [Fan Blade] Counts as an Axe, Sword, and Spade item. ",
+    "tags": ["Spades", "Sword"],
+    "cards": ["A|draw_axe", "A|spade_blade_divide", "A|axe_blade_cleave", "A|fan_blade"]
+  },
+  {
+    "name": "Cwynboddy Shot",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Equipment: Weapon. Requires power to shoot, 50% chance of jamming after each shot. Shoots at very long range, dealing 1 deep wound per 2 boons in mastery tree. On kill, foes drop a shower of loot. Grants: [Cw५nbⓧddy Shⓧt]",
+    "tags": ["Bolt", "Queen", "Star"],
+    "cards": ["A|cwynboddy_shot"]
+  },
+  {
+    "name": "Fang of the Little Wolf",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Use: Weapon, grants: [Backhand Swipe] [High Slash] [Stab Chest] [Stabby Stab Stab] Reminds you of the Wolf.",
+    "tags": ["Wolf"],
+    "cards": ["A|backhand_swipe", "A|high_slash", "A|stab_chest", "A|stabbity_stab_stab"]
+  },
+  {
+    "name": "White Road Brick",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Use: It can be used as a brick might. In a combat situation, it can be used as a weapon, giving: [Oops] [Overhead Bash] [Clumsy Bash] [Awkward Toss]",
+    "tags": ["Brick"],
+    "cards": ["A|oops", "A|overhead_bash", "A|clumsy_bash", "A|awkward_toss"]
+  },
+  {
+    "name": "Wolfswood Spear",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Equipment: A vicious improvised short-spear that reminds you of the Wolf. Grants: [Thrust] [Wolf’s Tooth] [Rend] Hits with this weapon can inflict deep wounds.",
+    "tags": ["Wolf"],
+    "cards": ["A|thrust", "A|wolfs_tooth", "A|rend"]
+  },
+  {
+    "name": "The Block",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Equipment: An arcane and strange weapon. An immense pain in the ass to use, according to Ava. You may have this replace up to 6 combat cards with [The Block] cards. May require research to effectively use."
   }
 ]
