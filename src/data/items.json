@@ -29,13 +29,13 @@
     "blurb": "The wearable hide of a Lost beast that isn’t always there, or isn’t visible from every angle",
     "desc": "Equipment: Worn in any middle slot. While worn, can run from any combat with an action, and can pass through a node without triggering it or spending Supply, provided your way isn’t sealed or locked. There is a 12% chance you spend 2 supply when doing so, and if that triggers, a 12% chance you gain a bane specific to the hollowed & vestiges. 1% increase to item quality & quantity late in a Path. Grants [Fade Away] [Empty]",
     "tags": ["Beasts"],
-    "cards": ["D|fade_away", "D|empty"]
+    "cards": ["D|fade_away", "empty"]
   },
   {
     "name": "Teak Topcoat",
     "slots": ["MR"],
     "blurb": "A long brown coat, lightweight, as fashionable as it is practical. The fibers resemble the texture of dark wood.",
-    "desc": "Equipment: Middle Right. You can’t lose more than [10-Nature] 🖤, +, or ▮ from a source. Grants one armored health to middle of health bar, resistance to weather, and [Better Nature]",
+    "desc": "Equipment: Middle Right. You can’t lose more than [10-Nature] ❤, +, or ▮ from a source. Grants one armored health to middle of health bar, resistance to weather, and [Better Nature]",
     "tags": ["Nature"],
     "cards": ["D|better_nature"]
   },
@@ -49,8 +49,8 @@
   {
     "name": "Wraps of Gold Wheat",
     "slots": ["TL", "BL", "BR"],
-    "blurb": "Filler",
-    "desc": "Filler",
+    "blurb": "Light yellow wraps worn wrapped around hands or feet. The frayed edges of the braided thread look like heads of wheat.",
+    "desc": "Equip: Worn in NW (face), SW (glove), or SE (boot) spot. Link & Unite two adjacent items with multiple options: ➢ Face: When eating, drinking, or healing, health & supply equalize 1. ➢ Hands: Every 3 victories in martial combat, restore 1 for lower of health vs. supply. ➢ Foot: When dropping beneath 50% health or supply, once per expedition, fully equalize the values. Grants (hand/foot): [Bend / Will]",
     "slotCards": [
       { "slot": "BL", "cards": ["A|bend_will"] },
       { "slot": "BR", "cards": ["A|bend_will"] }
@@ -59,25 +59,68 @@
   {
     "name": "Dais Doaspeiri",
     "slots": "BR",
-    "tags": ["Adversary"],
     "blurb": "",
     "desc": "Equipment: Occupies bottom-right equip slot. Also occupies a center- column mastery slot when worn. Leaves slots temporarily unusable if taken off. Has a progression mechanic. Part of a set. Significantly upgrade all combat cards with feet depicted, critically upgrade one. Can hop to nearby node 3x per expedition, if you have route to walk there. Grants: [Four kicks] [Withdraw] [Fade Away]",
+    "tags": ["Adversary"],
     "cards": ["A|four_kicks", "D|withdraw", "D|fade_away"]
   },
   {
     "name": "Teak Trousers",
     "slots": "ROW_B",
-    "tags": ["Nature"],
     "blurb": "",
     "desc": "Use: Defensive equipment. Worn in a bottom slot. Grants: [Plant Feet] While worn, the first time you would take N damage a combat, take 1, where N is the number of Teak things you equip +1",
+    "tags": ["Nature"],
     "cards": ["D|plant_feet"]
   },
   {
     "name": "Teak Vest",
     "slots": "ROW_M",
-    "tags": ["Nature"],
     "blurb": "",
     "desc": "Use: Defensive equipment. Worn in a middle slot. Grants: [Hardwood] While worn, the first time you take damage in a combat, heal ❤ a turn for N turns, where N is the number of Teak things you equip",
+    "tags": ["Nature"],
     "cards": ["D|hardwood"]
+  },
+  {
+    "name": "Red's Stockings",
+    "slots": ["ROW_B"],
+    "blurb": "",
+    "desc": "Equipment: Worn in any bottom row slot. Upgrades your boon from the Woven Thing and provides a mastery slot to maintain it. If you don’t have one, you gain one at partial strength while wearing this, with no mastery slot. You take 1 more damage when you take 2+ damage in a phase/turn. Grants: [Red’s Tread] ",
+    "tags": ["Ribbon"],
+    "cards": ["A|reds_tread"]
+  },
+  {
+    "name": "White Marble Ku",
+    "slots": ["BM"],
+    "blurb": "",
+    "desc": "Equipment: Equipment, bottom middle. Grants or deducts maximum supply based on your karma. When you’ve lost seven supply on movement while wearing this, gain 1 temporary armored HP, and a 16% chance of purifying Wrong items you’re wearing. Grants: [Stone Seal] [Feeling Lost] ",
+    "cards": ["D|stone_seal", "feeling_lost"]
+  },
+  {
+    "name": "Temple Stone Handwrap",
+    "slots": ["BL"],
+    "blurb": "",
+    "desc": "Equipment: Bottom left slot. When pushed or pulled by a source, that source deals no damage to you. When pushing or pulling someone or something else, you may discard a card to choose the direction. Grants: [Clothesline] [Spike] [Feeling Lost] ",
+    "cards": ["A|clothesline", "A|spike", "feeling_lost"]
+  },
+  {
+    "name": "Handbag",
+    "slots": ["ROW_M", "ROW_B"],
+    "blurb": "",
+    "desc": "Equipment: Occupies any equipment slot except for the top row. Gives three inventory slots. "
+  },
+  {
+    "name": "Dogfight Gloves",
+    "slots": ["EQUIP"],
+    "blurb": "",
+    "desc": "Use: Equipment, any slot. Gain [Dogfight Items equipped] x [Number of combats at this node after the first] x5% chance to half finish items. Items are finished at end of combat. Grants the defensive: [Corner fighting] ",
+    "tags": ["Dog"],
+    "cards": ["D|corner_fighting"]
+  },
+  {
+    "name": "Wreath a' Rosa Canina",
+    "slots": ["TR"],
+    "blurb": "",
+    "desc": "Equipment: Top Right. Dogs are plants and vice-versa. On a chain of 9 linked labels, all items are consumed & evolve. Eating meat invokes a minor card effect and vice-versa. ",
+    "tags": ["Dog", "Plant"]
   }
 ]

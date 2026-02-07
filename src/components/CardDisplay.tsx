@@ -4,7 +4,7 @@ import Slot from "../Slot";
 
 const baseDeckAtk = ["block_u_punch_l", "punch_lr", "haymaker", "block_u_punch_u", "block_r_kick_d", "wide_kick", "wide_right", "uppercut"]
 const baseDeckDef = ["block_l", "block_ur", "block_ur", "block_ud", "block_lr", "block_ud", "block_dl", "block_udlr"]
-const baseDeckSpecial = ["axe_coin", "axe_coin", "axe_coin", "expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"];
+const baseDeckSpecial = ["expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"];
 
 function Card(props: {id: string}) {
   const src = `/cards/${props.id}.png`;
@@ -14,7 +14,7 @@ function Card(props: {id: string}) {
       height: "100%",
       width: "100%"
     }}/>
-  )
+  );
 }
 
 export default function CardDisplay(props: {equip: EquipItems}) {
@@ -34,8 +34,9 @@ export default function CardDisplay(props: {equip: EquipItems}) {
   ]
 
   // Add cards from equipment
-  let addedAtk: string[] = [];
-  let addedDef: string[] = [];
+  let equipAtk: string[] = [];
+  let equipDef: string[] = [];
+  let equipExtra: string[] = [];
   slots.forEach(({iSlot, item}) => {
     const itemData = itemDict.get(item ?? "");
     let itemCards = itemData?.cards ?? [];
@@ -49,23 +50,24 @@ export default function CardDisplay(props: {equip: EquipItems}) {
     console.log(itemCards);
     itemCards.forEach((c) => {
       if (c.startsWith("A|")) {
-        addedAtk.push(c.substring(2))
+        equipAtk.push(c.substring(2))
       }
       else if (c.startsWith("D|")) {
-        addedDef.push(c.substring(2))
+        equipDef.push(c.substring(2))
       }
       else {
-        console.log("Uncategorized card:", c);
+        equipExtra.push(c)
       }
     })
   });
 
   let deck: string[] = [];
-  deck = deck.concat(addedAtk);
-  deck = deck.concat(baseDeckAtk.slice(addedAtk.length));
+  deck = deck.concat(equipAtk);
+  deck = deck.concat(baseDeckAtk.slice(equipAtk.length));
   deck = deck.concat(baseDeckSpecial);
-  deck = deck.concat(addedDef);
-  deck = deck.concat(baseDeckDef.slice(addedDef.length));
+  deck = deck.concat(equipDef);
+  deck = deck.concat(baseDeckDef.slice(equipDef.length));
+  deck = deck.concat(equipExtra);
   const cards = deck.map((c) => <Card id={c}/>);
 
   return (

@@ -15,7 +15,7 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
   });
 
   const currItem = itemDict.get(props.item ?? "");
-  const itemName = currItem?.name ?? "(None)";
+  const itemName = currItem?.name ?? "(Missing Name)";
   const itemBlurb = currItem?.blurb ?? "";
   const itemDesc = currItem?.desc ?? "";
   const itemTags = currItem?.tags?.map((t) => `[${t}]`).join(" ");
