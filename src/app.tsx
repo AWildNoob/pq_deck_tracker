@@ -6,6 +6,8 @@ import ItemSelect from './components/ItemSelect'
 import Slot from './Slot'
 import EquipSelect from './components/EquipSelect'
 import GlobalContext from './contexts/GlobalContext'
+import TagCount from './components/TagCount'
+import CardDisplay from './components/CardDisplay'
 
 interface EquipItems {
   TL: string | null,
@@ -39,19 +41,30 @@ export function App() {
   });
   return (
     <div style={{
-      width: "100%",
-      display: "flex"
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      height: "90svh"
     }}>
-      <div 
-        style={{
-          height: "80svh",
-          //width: "60svw"
-        }}>
-        <EquipSelect
-          state={state}
-          setState={setState}
-        />
+      <div style={{
+        height: "100%",
+        width: "100%",
+        display: "flex"
+      }}>
+        <div 
+          style={{
+            height: "80svh",
+            //width: "60svw"
+          }}>
+          <EquipSelect
+            state={state}
+            setState={setState}
+          />
+          <TagCount
+            equip={state}
+          />
+        </div>
       </div>
+      <CardDisplay equip={state}/>
     </div>
   )
 }

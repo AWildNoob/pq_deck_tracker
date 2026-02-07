@@ -24,6 +24,11 @@
   color: #888;
 }
 
+.bordered-cell {
+  border: 2px solid;
+  margin: 4px
+}
+
 .item-desc {
   text-align: left;
   margin-left: 2px;

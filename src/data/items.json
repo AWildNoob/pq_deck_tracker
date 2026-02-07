@@ -4,7 +4,7 @@
     "slots": ["W"],
     "blurb": "",
     "desc": "Grants [Axe Coin], [Axe Coin], [Axe Coin]",
-    "cards": ["axe_coin", "axe_coin", "axe_coin"]
+    "cards": ["A|axe_coin", "A|axe_coin", "A|axe_coin"]
   },
   {
     "name": "Peaks Stab Upwards",
@@ -12,14 +12,14 @@
     "blurb": "A knife that changes its dimensions depending on angle and movement, favoring being held upright and still.",
     "desc": "Equipment: One-handed weapon or offhand. After 9 victories with this on your person, a piece of worn Elemental equipment becomes Paths equipment. As a weapon, grants: [High Slash], [Stab Up], [Whirl] and if you get the choice at combat start, also take action as if you won advantage at round end. As an offhand, lose best defensive card for weak offense, modify offensive cards and grants: [Whirl], [Potential Energy]",
     "tags": ["Peaks"],
-    "slot_cards": [
+    "slotCards": [
       {
         "slot": "W",
-        "cards": ["high_slash", "stab_up", "whirl"]
+        "cards": ["A|high_slash", "A|stab_up", "A|whirl"]
       },
       {
         "slot": "OH",
-        "cards": ["whirl", ["potential_energy"]]
+        "cards": ["A|whirl", "A|potential_energy"]
       }
     ]
   },
@@ -29,7 +29,7 @@
     "blurb": "The wearable hide of a Lost beast that isn’t always there, or isn’t visible from every angle",
     "desc": "Equipment: Worn in any middle slot. While worn, can run from any combat with an action, and can pass through a node without triggering it or spending Supply, provided your way isn’t sealed or locked. There is a 12% chance you spend 2 supply when doing so, and if that triggers, a 12% chance you gain a bane specific to the hollowed & vestiges. 1% increase to item quality & quantity late in a Path. Grants [Fade Away] [Empty]",
     "tags": ["Beasts"],
-    "cards": ["fade_away", "empty"]
+    "cards": ["D|fade_away", "D|empty"]
   },
   {
     "name": "Teak Topcoat",
@@ -37,7 +37,7 @@
     "blurb": "A long brown coat, lightweight, as fashionable as it is practical. The fibers resemble the texture of dark wood.",
     "desc": "Equipment: Middle Right. You can’t lose more than [10-Nature] 🖤, +, or ▮ from a source. Grants one armored health to middle of health bar, resistance to weather, and [Better Nature]",
     "tags": ["Nature"],
-    "cards": ["better_nature"]
+    "cards": ["D|better_nature"]
   },
   {
     "name": "Harness of the Goblet",
@@ -51,9 +51,33 @@
     "slots": ["TL", "BL", "BR"],
     "blurb": "Filler",
     "desc": "Filler",
-    "slot_cards": [
-      { "slot": "BL", "cards": ["bend_will"] },
-      { "slot": "BR", "cards": ["bend_will"] }
+    "slotCards": [
+      { "slot": "BL", "cards": ["A|bend_will"] },
+      { "slot": "BR", "cards": ["A|bend_will"] }
     ]
+  },
+  {
+    "name": "Dais Doaspeiri",
+    "slots": "BR",
+    "tags": ["Adversary"],
+    "blurb": "",
+    "desc": "Equipment: Occupies bottom-right equip slot. Also occupies a center- column mastery slot when worn. Leaves slots temporarily unusable if taken off. Has a progression mechanic. Part of a set. Significantly upgrade all combat cards with feet depicted, critically upgrade one. Can hop to nearby node 3x per expedition, if you have route to walk there. Grants: [Four kicks] [Withdraw] [Fade Away]",
+    "cards": ["A|four_kicks", "D|withdraw", "D|fade_away"]
+  },
+  {
+    "name": "Teak Trousers",
+    "slots": "ROW_B",
+    "tags": ["Nature"],
+    "blurb": "",
+    "desc": "Use: Defensive equipment. Worn in a bottom slot. Grants: [Plant Feet] While worn, the first time you would take N damage a combat, take 1, where N is the number of Teak things you equip +1",
+    "cards": ["D|plant_feet"]
+  },
+  {
+    "name": "Teak Vest",
+    "slots": "ROW_M",
+    "tags": ["Nature"],
+    "blurb": "",
+    "desc": "Use: Defensive equipment. Worn in a middle slot. Grants: [Hardwood] While worn, the first time you take damage in a combat, heal ❤ a turn for N turns, where N is the number of Teak things you equip",
+    "cards": ["D|hardwood"]
   }
 ]

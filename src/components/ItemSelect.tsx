@@ -2,7 +2,7 @@ import Slot from "../Slot";
 import { itemDict } from "../Item";
 import { useState, type StateUpdater, type Dispatch } from "preact/hooks";
 
-export default function ItemSelect(props: { slot: Slot, item: string | null, setItem: any}) {
+export default function ItemSelect(props: { slot: Slot, item: string | null, setItem: (i: string | null) => void}) {
   //const [item, setItem] = useState("");
 
   let itemOpts = [...itemDict.values()].filter(i => i.slots.indexOf(props.slot) !== -1).map(i => i.name);
@@ -21,13 +21,10 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
   const itemTags = currItem?.tags?.map((t) => `[${t}]`).join(" ");
 
   return (
-    <div style={{
-      border: 2,
-      borderStyle: "solid",
-      margin: "4px",
-      width: "15svw",
-      minHeight: 0,
-      //height: "20svh"
+    <div class="bordered-cell" style={{
+        width: "15svw",
+        minHeight: 0,
+        //height: "20svh"
     }}>
       <div style={{
         display: "flex",
