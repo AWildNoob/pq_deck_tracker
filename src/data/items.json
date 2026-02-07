@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Transient Nature",
+    "slots": ["ROW_M"],
+    "blurb": "The wearable hide of a Lost beast that isn’t always there, or isn’t visible from every angle",
+    "desc": "Equipment: Worn in any middle slot. While worn, can run from any combat with an action, and can pass through a node without triggering it or spending Supply, provided your way isn’t sealed or locked. There is a 12% chance you spend 2 supply when doing so, and if that triggers, a 12% chance you gain a bane specific to the hollowed & vestiges. 1% increase to item quality & quantity late in a Path. Grants [Fade Away] [Empty]",
+    "tags": ["Beasts"],
+    "cards": ["fade_away", "empty"]
+  },
+  {
+    "name": "Teak Topcoat",
+    "slots": ["MR"],
+    "blurb": "A long brown coat, lightweight, as fashionable as it is practical. The fibers resemble the texture of dark wood.",
+    "desc": "Equipment: Middle Right. You can’t lose more than [10-Nature] 🖤, +, or ▮ from a source. Grants one armored health to middle of health bar, resistance to weather, and [Better Nature]",
+    "tags": ["Nature"],
+    "cards": ["better_nature"]
+  },
+  {
+    "name": "Harness of the Goblet",
+    "slots": "M",
+    "blurb": "An H-shaped harness worn across the chest and body, etched with images of women holding goblets raised to the sky.",
+    "desc": "Equipment: Middle slot. Gains a charge after every fight, and for every 5 nodes walked. Spend 6 charges for a cleansing effect on yourself, 9 for a cleanse on someone else, and 12 to suppress effects of a random bane you have. Lower amounts/remainder are spent for morale restoration.",
+    "tags": ["Cups"]
+  },
+  {
+    "name": "Wraps of Gold Wheat",
+    "slots": ["TL", "BL", "BR"],
+    "blurb": "Filler",
+    "desc": "Filler",
+    "slot_cards": [
+      { "slot": "BL", "cards": ["bend_will"] },
+      { "slot": "BR", "cards": ["bend_will"] }
+    ]
+  }
+]
