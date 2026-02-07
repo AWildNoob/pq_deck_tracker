@@ -52,7 +52,7 @@ export function App() {
       }}>
         <div 
           style={{
-            height: "80svh",
+            maxHeight: "90svh",
             //width: "60svw"
           }}>
           <EquipSelect

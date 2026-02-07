@@ -35,7 +35,7 @@ export default function EquipSelect(props: {state: EquipItems, setState: Dispatc
       display: "grid",
       gridTemplateColumns: "1fr 1fr 1fr",
       gridTemplateRows: "1fr 1fr 1fr 1fr",
-      height: "100%"
+      height: "90%"
     }}>
       <ItemSelect
         slot={Slot.TL}

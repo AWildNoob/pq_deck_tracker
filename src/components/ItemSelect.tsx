@@ -22,7 +22,7 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
 
   return (
     <div class="bordered-cell" style={{
-        width: "15svw",
+        //width: "15svw",
         minHeight: 0,
         //height: "20svh"
     }}>
