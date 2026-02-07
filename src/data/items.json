@@ -1,5 +1,29 @@
 [
   {
+    "name": "Axe Coin",
+    "slots": ["W"],
+    "blurb": "",
+    "desc": "Grants [Axe Coin], [Axe Coin], [Axe Coin]",
+    "cards": ["axe_coin", "axe_coin", "axe_coin"]
+  },
+  {
+    "name": "Peaks Stab Upwards",
+    "slots": ["W", "OH"],
+    "blurb": "A knife that changes its dimensions depending on angle and movement, favoring being held upright and still.",
+    "desc": "Equipment: One-handed weapon or offhand. After 9 victories with this on your person, a piece of worn Elemental equipment becomes Paths equipment. As a weapon, grants: [High Slash], [Stab Up], [Whirl] and if you get the choice at combat start, also take action as if you won advantage at round end. As an offhand, lose best defensive card for weak offense, modify offensive cards and grants: [Whirl], [Potential Energy]",
+    "tags": ["Peaks"],
+    "slot_cards": [
+      {
+        "slot": "W",
+        "cards": ["high_slash", "stab_up", "whirl"]
+      },
+      {
+        "slot": "OH",
+        "cards": ["whirl", ["potential_energy"]]
+      }
+    ]
+  },
+  {
     "name": "Transient Nature",
     "slots": ["ROW_M"],
     "blurb": "The wearable hide of a Lost beast that isn’t always there, or isn’t visible from every angle",

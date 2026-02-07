@@ -2,7 +2,7 @@ import Slot from "../Slot";
 import { itemDict } from "../Item";
 import { useState, type StateUpdater, type Dispatch } from "preact/hooks";
 
-export default function ItemSelect(props: { slot: Slot, item: string, setItem: Dispatch<StateUpdater<string>>}) {
+export default function ItemSelect(props: { slot: Slot, item: string | null, setItem: any}) {
   //const [item, setItem] = useState("");
 
   let itemOpts = [...itemDict.values()].filter(i => i.slots.indexOf(props.slot) !== -1).map(i => i.name);
@@ -14,19 +14,43 @@ export default function ItemSelect(props: { slot: Slot, item: string, setItem: D
     itemOptJSX.push(<option value={i}>{i}</option>);
   });
 
-  const currItem = itemDict.get(props.item);
+  const currItem = itemDict.get(props.item ?? "");
   const itemName = currItem?.name ?? "(None)";
   const itemBlurb = currItem?.blurb ?? "";
   const itemDesc = currItem?.desc ?? "";
+  const itemTags = currItem?.tags?.map((t) => `[${t}]`).join(" ");
 
   return (
-    <div>
-      <div style="border: 2px; border-style: solid;">
-        <select onChange={e => props.setItem(e.currentTarget.value)}>
+    <div style={{
+      border: 2,
+      borderStyle: "solid",
+      margin: "4px",
+      width: "15svw",
+      minHeight: 0,
+      //height: "20svh"
+    }}>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        maxHeight: "100%",
+        minHeight: 0
+      }}>
+        <select
+          style={{
+            width: "90%",
+            marginTop: "4px",
+          }}
+          onChange={e => props.setItem(e.currentTarget.value)}
+        >
           {itemOptJSX}
         </select>
-        <p><i>{itemBlurb}</i></p>
-        <p>{itemDesc}</p>
+        <div style={{
+          overflowY: "auto",
+          marginBottom: "4px"
+        }}>
+          <div class="item-desc"><small>{itemDesc}</small></div>
+          <small><b>{itemTags ? "Tags: " : ""}</b>{itemTags}</small>
+        </div>
       </div>
     </div>
   );

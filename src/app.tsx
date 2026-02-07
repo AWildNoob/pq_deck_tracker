@@ -7,7 +7,7 @@ import Slot from './Slot'
 import EquipSelect from './components/EquipSelect'
 import GlobalContext from './contexts/GlobalContext'
 
-interface equipItems {
+interface EquipItems {
   TL: string | null,
   TM: string | null,
   TR: string | null,
@@ -23,13 +23,35 @@ interface equipItems {
 }
 
 export function App() {
-  const [state, setState] =
+  const [state, setState] = useState<EquipItems>({
+    TL: null,
+    TM: null,
+    TR: null,
+    ML: null,
+    M: null,
+    MR: null,
+    BL: null,
+    BM: null,
+    BR: null,
+    weapon: null,
+    offhand: null,
+    trinket: null,
+  });
   return (
-    <GlobalContext.Provider value=>
-      <EquipSelect
-        state={state}
-        setState={setState}
-      />
-    </GlobalContext.Provider>
+    <div style={{
+      width: "100%",
+      display: "flex"
+    }}>
+      <div 
+        style={{
+          height: "80svh",
+          //width: "60svw"
+        }}>
+        <EquipSelect
+          state={state}
+          setState={setState}
+        />
+      </div>
+    </div>
   )
 }
