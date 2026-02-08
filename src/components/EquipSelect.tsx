@@ -1,6 +1,5 @@
-import { useContext, type StateUpdater, type Dispatch } from "preact/hooks";
+import { type StateUpdater, type Dispatch } from "preact/hooks";
 import Slot from "../Slot";
-import GlobalContext from "../contexts/GlobalContext";
 import ItemSelect from "./ItemSelect";
 
 interface EquipItems {

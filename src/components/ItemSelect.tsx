@@ -1,6 +1,5 @@
 import Slot from "../Slot";
 import { itemDict } from "../Item";
-import { useState, type StateUpdater, type Dispatch, useEffect } from "preact/hooks";
 
 export default function ItemSelect(props: { slot: Slot, item: string | null, setItem: (i: string | null) => void}) {
   let itemOpts = [...itemDict.values()].filter(i => i.slots.indexOf(props.slot) !== -1).map(i => i.name);
@@ -13,8 +12,8 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
   });
 
   const currItem = itemDict.get(props.item ?? "");
-  const itemName = currItem?.name ?? "(Missing Name)";
-  const itemBlurb = currItem?.blurb ?? "";
+  //const itemName = currItem?.name ?? "(Missing Name)";
+  //const itemBlurb = currItem?.blurb ?? "";
   const itemDesc = currItem?.desc ?? "";
   const itemTags = currItem?.tags?.map((t) => `[${t}]`).join(" ");
 

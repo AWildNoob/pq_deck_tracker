@@ -1,7 +1,6 @@
 import { useState } from 'preact/hooks'
 import './app.css'
 import EquipSelect from './components/EquipSelect'
-import GlobalContext from './contexts/GlobalContext'
 import TagCount from './components/TagCount'
 import CardDisplay from './components/CardDisplay'
 

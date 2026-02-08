@@ -17,23 +17,10 @@ export interface EquipItems {
 }
 
 export interface EquipItemsDispatch {
-  inputState: EquipItems,
-  setInputState: Dispatch<EquipItems>
+  state: EquipItems,
+  setState: Dispatch<EquipItems>
 }
 
-export const GlobalContext = createContext<EquipItems>({
-  TL: null,
-  TM: null,
-  TR: null,
-  ML: null,
-  M: null,
-  MR: null,
-  BL: null,
-  BM: null,
-  BR: null,
-  weapon: null,
-  offhand: null,
-  trinket: null,
-});
+const GlobalContext = createContext<EquipItemsDispatch|null>(null);
 export default GlobalContext;
 
