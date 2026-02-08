@@ -37,8 +37,10 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Build TypeScript
+        run: tsc -b
       - name: Build
-        run: npm run build
+        run: vite build --base=pq_deck_tracker
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
