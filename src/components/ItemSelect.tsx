@@ -1,10 +1,8 @@
 import Slot from "../Slot";
 import { itemDict } from "../Item";
-import { useState, type StateUpdater, type Dispatch } from "preact/hooks";
+import { useState, type StateUpdater, type Dispatch, useEffect } from "preact/hooks";
 
 export default function ItemSelect(props: { slot: Slot, item: string | null, setItem: (i: string | null) => void}) {
-  //const [item, setItem] = useState("");
-
   let itemOpts = [...itemDict.values()].filter(i => i.slots.indexOf(props.slot) !== -1).map(i => i.name);
   itemOpts.sort();
 
@@ -38,6 +36,7 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
             marginTop: "4px",
           }}
           onChange={e => props.setItem(e.currentTarget.value)}
+          value={props.item ?? ""}
         >
           {itemOptJSX}
         </select>
