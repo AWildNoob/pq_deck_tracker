@@ -25,7 +25,7 @@ interface EquipItems {
 }
 
 export function App() {
-  const [state, setState] = useState<EquipItems>({
+  const blankState = {
     TL: null,
     TM: null,
     TR: null,
@@ -38,7 +38,9 @@ export function App() {
     weapon: null,
     offhand: null,
     trinket: null,
-  });
+  };
+  const [state, setState] = useState<EquipItems>(blankState);
+  const resetEquip = () => setState(blankState);
   return (
     <div style={{
       display: "grid",
@@ -46,25 +48,32 @@ export function App() {
       height: "90svh"
     }}>
       <div style={{
-        height: "100%",
-        width: "100%",
-        display: "flex"
+          minHeight: "100%"
       }}>
-        <div 
+        <EquipSelect
+          state={state}
+          setState={setState}
+        />
+      </div>
+      <div id="equip-select">
+        <div style={{
+          gridArea: "a"
+        }}>
+          <CardDisplay equip={state}/>
+        </div>
+        <button
+          onClick={resetEquip}
           style={{
-            maxHeight: "90svh",
-            //width: "60svw"
-          }}>
-          <EquipSelect
-            state={state}
-            setState={setState}
-          />
+            gridArea: "b"
+        }}>Reset</button>
+        <div style={{
+          gridArea: "c"
+        }}>
           <TagCount
             equip={state}
           />
         </div>
       </div>
-      <CardDisplay equip={state}/>
     </div>
   )
 }

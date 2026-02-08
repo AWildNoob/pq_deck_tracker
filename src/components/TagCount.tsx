@@ -28,7 +28,13 @@ export default function TagCount(props: {equip: EquipItems}) {
     return <span><b>{tag}: </b>{count} </span>
   });
   return (
-    <div class="bordered-cell">
+    <div class="bordered-cell" style={{
+      textAlign: "left",
+      verticalAlign: "middle",
+      height: "100%",
+      margin: "4px",
+      padding: "4px"
+    }}>
       {entries}
     </div>
   )

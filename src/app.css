@@ -26,7 +26,8 @@
 
 .bordered-cell {
   border: 2px solid;
-  margin: 4px
+  margin: 2px;
+  box-sizing: border-box;
 }
 
 .item-desc {
@@ -44,4 +45,14 @@ img:before {
   border-radius: 6px;
   box-sizing: border-box;
   background-color: #999999;
+}
+
+#equip-select {
+  max-height: 90svh;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "a a" "b c";
+  grid-template-rows: 9fr 1fr;
+  grid-template-columns: 1fr 9fr;
 }
