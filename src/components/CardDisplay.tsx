@@ -7,7 +7,9 @@ const baseDeckDef = ["block_l", "block_ur", "block_ur", "block_ud", "block_lr", 
 const baseDeckSpecial = ["expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"];
 
 function Card(props: {id: string}) {
-  const src = `/cards/${props.id}.png`;
+  const baseImgUrl = (process.env.NODE_ENV === "production" ? "/assets" : "") + "/cards";
+  console.log(process.env.NODE_ENV);
+  const src = `${baseImgUrl}/${props.id}.png`;
   const altTextName = props.id.split("_").map((s) => s.substring(0, 1).toUpperCase() + s.substring(1)).join(" ");
   return (
     <img src={src} alt={altTextName} style={{
