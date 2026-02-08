@@ -40,7 +40,7 @@ jobs:
       - name: Build TypeScript
         run: tsc -b
       - name: Build
-        run: vite build --base=pq_deck_tracker
+        run: npx vite build --base=pq_deck_tracker
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
