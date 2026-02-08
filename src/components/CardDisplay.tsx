@@ -8,11 +8,13 @@ const baseDeckSpecial = ["expound", "expound", "expound", "rabbit_assist", "fish
 
 function Card(props: {id: string}) {
   const src = `/cards/${props.id}.png`;
-  const altTextName = props.id.split("_").map((s) => s.substring(0, 1).toUpperCase() + s.substring(1)).join(" ")
+  const altTextName = props.id.split("_").map((s) => s.substring(0, 1).toUpperCase() + s.substring(1)).join(" ");
   return (
     <img src={src} alt={altTextName} style={{
       height: "100%",
-      width: "100%"
+      width: "100%",
+      overflow: "hidden",
+      textOverflow: "clip"
     }}/>
   );
 }
@@ -47,7 +49,6 @@ export default function CardDisplay(props: {equip: EquipItems}) {
     });
 
     // Categorize cards based on prefix
-    console.log(itemCards);
     itemCards.forEach((c) => {
       if (c.startsWith("A|")) {
         equipAtk.push(c.substring(2))
@@ -55,8 +56,11 @@ export default function CardDisplay(props: {equip: EquipItems}) {
       else if (c.startsWith("D|")) {
         equipDef.push(c.substring(2))
       }
+      else if (c.startsWith("+|")) {
+        equipExtra.push(c.substring(2))
+      }
       else {
-        equipExtra.push(c)
+        console.log(`Uncategorized card: ${c}`)
       }
     })
   });

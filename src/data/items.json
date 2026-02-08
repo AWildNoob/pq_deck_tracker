@@ -108,7 +108,7 @@
     "blurb": "",
     "desc": "Equipment: Middle-left slot. When you have [Set] ❤‘s remaining, upgrade your offensive cards. Grants: [Power Up]",
     "tags": ["Hero"],
-    "cards": ["power_up"]
+    "cards": ["D|power_up"]
   },
   {
     "name": "Axe Coin",
@@ -140,7 +140,7 @@
     "blurb": "The wearable hide of a Lost beast that isn’t always there, or isn’t visible from every angle",
     "desc": "Equipment: Worn in any middle slot. While worn, can run from any combat with an action, and can pass through a node without triggering it or spending Supply, provided your way isn’t sealed or locked. There is a 12% chance you spend 2 supply when doing so, and if that triggers, a 12% chance you gain a bane specific to the hollowed & vestiges. 1% increase to item quality & quantity late in a Path. Grants [Fade Away] [Empty]",
     "tags": ["Beasts"],
-    "cards": ["D|fade_away", "empty"]
+    "cards": ["D|fade_away", "+|empty"]
   },
   {
     "name": "Teak Topcoat",
@@ -228,14 +228,14 @@
     "slots": ["BM"],
     "blurb": "",
     "desc": "Equipment: Equipment, bottom middle. Grants or deducts maximum supply based on your karma. When you’ve lost seven supply on movement while wearing this, gain 1 temporary armored HP, and a 16% chance of purifying Wrong items you’re wearing. Grants: [Stone Seal] [Feeling Lost] ",
-    "cards": ["D|stone_seal", "feeling_lost"]
+    "cards": ["D|stone_seal", "+|feeling_lost"]
   },
   {
     "name": "Temple Stone Handwrap",
     "slots": ["BL"],
     "blurb": "",
     "desc": "Equipment: Bottom left slot. When pushed or pulled by a source, that source deals no damage to you. When pushing or pulling someone or something else, you may discard a card to choose the direction. Grants: [Clothesline] [Spike] [Feeling Lost] ",
-    "cards": ["A|clothesline", "A|spike", "feeling_lost"]
+    "cards": ["A|clothesline", "A|spike", "+|feeling_lost"]
   },
   {
     "name": "Clockwork Lion Pelt",
@@ -243,7 +243,7 @@
     "blurb": "",
     "desc": "Equipment: Rightmost middle slot. Has no effect. Spend a key to unlock defensive properties (cannot take more than 1 damage from a source) discard any number of cards, and gain stone lion cards in their place. After, roll 1d4; on a 1, lower this item’s value. One a 3-4, raise it by 1. Grants: [Feeling Lost] ",
     "tags": ["Manners"],
-    "cards": ["feeling_lost"]
+    "cards": ["+|feeling_lost"]
   },
   {
     "name": "Handbag",
