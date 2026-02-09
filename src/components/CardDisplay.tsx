@@ -6,8 +6,10 @@ const baseDeckAtk = ["block_u_punch_l", "punch_lr", "haymaker", "block_u_punch_u
 const baseDeckDef = ["block_l", "block_ur", "block_ur", "block_ud", "block_lr", "block_ud", "block_dl", "block_udlr"]
 const baseDeckSpecial = ["expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"];
 
+const baseURL = import.meta.env.BASE_URL
+
 function Card(props: {id: string}) {
-  const baseImgUrl = `${import.meta.env.BASE_URL}/cards`;
+  const baseImgUrl = `${baseURL === "/" ? "" : baseURL}/cards`;
   const src = `${baseImgUrl}/${props.id}.png`;
   const altTextName = props.id.split("_").map((s) => s.substring(0, 1).toUpperCase() + s.substring(1)).join(" ");
   return (
