@@ -50,7 +50,15 @@ export function App() {
           setState={setState}
         />
       </div>
-      <div id="equip-select">
+      <div id="equip-select" style={{
+        maxHeight: "90svh",
+        height: "100%",
+        width: "100%",
+        display: "grid",
+        gridTemplateAreas: "\"a a\" \"b c\"",
+        gridTemplateRows: "9fr min-content",
+        gridTemplateColumns: "1fr 9fr"
+      }}>
         <div style={{
           gridArea: "a"
         }}>

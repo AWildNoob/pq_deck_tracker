@@ -33,6 +33,7 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
           style={{
             width: "90%",
             marginTop: "4px",
+            alignSelf: "center"
           }}
           onChange={e => props.setItem(e.currentTarget.value)}
           value={props.item ?? ""}
