@@ -29,7 +29,7 @@ export interface EquipItemsDispatch {
 export const defaultDeck = {
   atk: ["block_u_punch_l", "punch_lr", "haymaker", "block_u_punch_u", "block_r_kick_d", "wide_kick", "wide_right", "uppercut"],
   def: ["block_l", "block_ur", "block_ur", "block_ud", "block_lr", "block_ud", "block_dl", "block_udlr"],
-  special: ["expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"]
+  special: ["3xpound", "3xpound", "3xpound", "rabbit_assist", "fish_assist", "browbeat"]
 }
 
 export const defaultState: EquipItems = {
