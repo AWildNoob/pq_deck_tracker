@@ -3,25 +3,12 @@ import './app.css'
 import EquipSelect from './components/EquipSelect'
 import TagCount from './components/TagCount'
 import CardDisplay from './components/CardDisplay'
-import type { EquipItems } from './contexts/GlobalContext'
+import { defaultState, type EquipItems } from './contexts/GlobalContext'
+import Controls from './components/Controls'
 
 export function App() {
-  const blankState = {
-    TL: null,
-    TM: null,
-    TR: null,
-    ML: null,
-    M: null,
-    MR: null,
-    BL: null,
-    BM: null,
-    BR: null,
-    weapon: null,
-    offhand: null,
-    trinket: null,
-  };
-  const [state, setState] = useState<EquipItems>(blankState);
-  const resetEquip = () => setState(blankState);
+  const [state, setState] = useState<EquipItems>(defaultState);
+  const resetEquip = () => setState(defaultState);
   return (
     <div style={{
       display: "grid",
@@ -41,27 +28,10 @@ export function App() {
         height: "100%",
         width: "100%",
         display: "grid",
-        gridTemplateAreas: "\"a a\" \"b c\"",
-        gridTemplateRows: "9fr min-content",
-        gridTemplateColumns: "1fr 9fr"
+        gridTemplateRows: "9fr min-content"
       }}>
-        <div style={{
-          gridArea: "a"
-        }}>
-          <CardDisplay equip={state}/>
-        </div>
-        <button
-          onClick={resetEquip}
-          style={{
-            gridArea: "b"
-        }}>Reset</button>
-        <div style={{
-          gridArea: "c"
-        }}>
-          <TagCount
-            equip={state}
-          />
-        </div>
+        <CardDisplay equip={state}/>
+        <Controls state={state} setState={setState}/>
       </div>
     </div>
   )

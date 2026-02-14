@@ -3,12 +3,9 @@ import type { EquipItems } from "../contexts/GlobalContext";
 import { itemDict } from "../Item";
 import Slot from "../Slot";
 import cardLinkList from "../data/linked_cards.json";
+
 const baseURL = import.meta.env.BASE_URL;
 const baseImgUrl = `${baseURL === "/" ? "" : baseURL}/cards`;
-
-const baseDeckAtk = ["block_u_punch_l", "punch_lr", "haymaker", "block_u_punch_u", "block_r_kick_d", "wide_kick", "wide_right", "uppercut"]
-const baseDeckDef = ["block_l", "block_ur", "block_ur", "block_ud", "block_lr", "block_ud", "block_dl", "block_udlr"]
-const baseDeckSpecial = ["expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"];
 
 const cardLinks = getCardLinks(cardLinkList);
 
@@ -95,7 +92,8 @@ export default function CardDisplay(props: {equip: EquipItems}) {
     { iSlot: Slot.W, item: props.equip.weapon },
     { iSlot: Slot.OH, item: props.equip.offhand },
     { iSlot: Slot.TRINKET, item: props.equip.trinket }
-  ]
+  ];
+  const baseDeck = props.equip.baseDeck;
 
   // Add cards from equipment
   let equipAtk: string[] = [];
@@ -129,10 +127,10 @@ export default function CardDisplay(props: {equip: EquipItems}) {
 
   let deck: string[] = [];
   deck = deck.concat(equipAtk);
-  deck = deck.concat(baseDeckAtk.slice(equipAtk.length));
-  deck = deck.concat(baseDeckSpecial);
+  deck = deck.concat(baseDeck.atk.slice(equipAtk.length));
+  deck = deck.concat(baseDeck.special);
   deck = deck.concat(equipDef);
-  deck = deck.concat(baseDeckDef.slice(equipDef.length));
+  deck = deck.concat(baseDeck.def.slice(equipDef.length));
   deck = deck.concat(equipExtra);
 
   // Card selection

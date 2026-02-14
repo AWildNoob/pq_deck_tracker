@@ -32,8 +32,8 @@
 
 .item-desc {
   text-align: left;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .slot-desc {
@@ -42,6 +42,16 @@
   opacity: 0.5;
   margin-top: 1em;
   text-align: center;
+}
+
+.controls {
+  display: flex;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.controls > button {
+  margin: 2px;
 }
 
 img:before {
