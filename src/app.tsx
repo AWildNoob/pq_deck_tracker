@@ -3,21 +3,7 @@ import './app.css'
 import EquipSelect from './components/EquipSelect'
 import TagCount from './components/TagCount'
 import CardDisplay from './components/CardDisplay'
-
-interface EquipItems {
-  TL: string | null,
-  TM: string | null,
-  TR: string | null,
-  ML: string | null,
-  M: string | null,
-  MR: string | null,
-  BL: string | null,
-  BM: string | null,
-  BR: string | null,
-  weapon: string | null,
-  offhand: string | null,
-  trinket: string | null,
-}
+import type { EquipItems } from './contexts/GlobalContext'
 
 export function App() {
   const blankState = {

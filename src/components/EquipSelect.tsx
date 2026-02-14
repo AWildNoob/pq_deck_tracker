@@ -38,56 +38,67 @@ export default function EquipSelect(props: {state: EquipItems, setState: Dispatc
     }}>
       <ItemSelect
         slot={Slot.TL}
+        slotName="Top Left"
         item={props.state.TL}
         setItem={setTL}
       />
       <ItemSelect
         slot={Slot.TM}
+        slotName="Top Mid"
         item={props.state.TM}
         setItem={setTM}
       />
       <ItemSelect
         slot={Slot.TR}
+        slotName="Top Right"
         item={props.state.TR}
         setItem={setTR}
       />
       <ItemSelect
         slot={Slot.ML}
+        slotName="Middle Left"
         item={props.state.ML}
         setItem={setML}
       />
       <ItemSelect
         slot={Slot.M}
+        slotName="Middle"
         item={props.state.M}
         setItem={setM}
       />
       <ItemSelect
         slot={Slot.MR}
+        slotName="Middle Right"
         item={props.state.MR}
         setItem={setMR}
       />
       <ItemSelect
         slot={Slot.BL}
+        slotName="Bottom Left"
         item={props.state.BL}
         setItem={setBL}
       />
       <ItemSelect
         slot={Slot.BM}
+        slotName="Bottom Mid"
         item={props.state.BM}
         setItem={setBM}
       />
       <ItemSelect
         slot={Slot.BR}
+        slotName="Bottom Right"
         item={props.state.BR}
         setItem={setBR}
       />
       <ItemSelect
         slot={Slot.W}
+        slotName="Weapon"
         item={props.state.weapon}
         setItem={setWeapon}
       />
       <ItemSelect
         slot={Slot.OH}
+        slotName="Offhand"
         item={props.state.offhand}
         setItem={setOffhand}
       />

@@ -1,7 +1,7 @@
 import Slot from "../Slot";
 import { itemDict } from "../Item";
 
-export default function ItemSelect(props: { slot: Slot, item: string | null, setItem: (i: string | null) => void}) {
+export default function ItemSelect(props: { slot: Slot, slotName: string, item: string | null, setItem: (i: string | null) => void}) {
   let itemOpts = [...itemDict.values()].filter(i => i.slots.indexOf(props.slot) !== -1).map(i => i.name);
   itemOpts.sort();
 
@@ -16,6 +16,17 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
   //const itemBlurb = currItem?.blurb ?? "";
   const itemDesc = currItem?.desc ?? "";
   const itemTags = currItem?.tags?.map((t) => `[${t}]`).join(" ");
+
+  const isEmpty = (currItem ?? "") === "";
+  const itemDescBox = <small>{itemDesc}</small>;
+  const slotNameBox = (
+    <b style={{
+      display: "inline",
+      verticalAlign: "center",
+      textAlign: "center"
+    }}>{props.slotName}</b>
+  );
+  const boxContents = isEmpty ? slotNameBox : itemDescBox;
 
   return (
     <div class="bordered-cell" style={{
@@ -44,7 +55,7 @@ export default function ItemSelect(props: { slot: Slot, item: string | null, set
           overflowY: "auto",
           marginBottom: "4px"
         }}>
-          <div class="item-desc"><small>{itemDesc}</small></div>
+          <div class="item-desc">{boxContents}</div>
           <small><b>{itemTags ? "Tags: " : ""}</b>{itemTags}</small>
         </div>
       </div>

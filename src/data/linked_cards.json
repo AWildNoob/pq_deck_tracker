@@ -1,0 +1,6 @@
+[
+  {"card": "fish_assist", "linkedCards": ["fish_assist", "pisces_discourse"]},
+  {"card": "spade_blade_divide", "linkedCards": ["spade", "blade", "divide"]},
+  {"card": "axe_blade_cleave", "linkedCards": ["axe", "blade", "cleave"]},
+  {"card": "four_kicks", "linkedCards": ["four_kicks", "three_kicks", "two_kicks", "a_kick"]}
+]
