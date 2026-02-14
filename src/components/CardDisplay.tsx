@@ -1,16 +1,16 @@
-import { useState, type StateUpdater, type Dispatch } from "preact/hooks";
+import { useState, type StateUpdater, type Dispatch, useEffect } from "preact/hooks";
 import type { EquipItems } from "../contexts/GlobalContext";
 import { itemDict } from "../Item";
 import Slot from "../Slot";
 import cardLinkList from "../data/linked_cards.json";
+const baseURL = import.meta.env.BASE_URL;
+const baseImgUrl = `${baseURL === "/" ? "" : baseURL}/cards`;
 
 const baseDeckAtk = ["block_u_punch_l", "punch_lr", "haymaker", "block_u_punch_u", "block_r_kick_d", "wide_kick", "wide_right", "uppercut"]
 const baseDeckDef = ["block_l", "block_ur", "block_ur", "block_ud", "block_lr", "block_ud", "block_dl", "block_udlr"]
 const baseDeckSpecial = ["expound", "expound", "expound", "rabbit_assist", "fish_assist", "browbeat"];
 
 const cardLinks = getCardLinks(cardLinkList);
-
-const baseURL = import.meta.env.BASE_URL
 
 function getCardLinks(cardLinkList: {card: string, linkedCards: string[]}[]) {
   const m = new Map<string, string[]>();
@@ -21,47 +21,8 @@ function getCardLinks(cardLinkList: {card: string, linkedCards: string[]}[]) {
 }
 
 function Card(props: {idx: number, cardId: string, selected: number | null, setSelected: Dispatch<StateUpdater<number|null>>}) {
-  const baseImgUrl = `${baseURL === "/" ? "" : baseURL}/cards`;
   const src = `${baseImgUrl}/${props.cardId}.png`;
   const altTextName = props.cardId.split("_").map((s) => s.substring(0, 1).toUpperCase() + s.substring(1)).join(" ");
-  if (props.idx === props.selected) {
-    // Determine if there are associated cards
-    const expCardList = cardLinks.get(props.cardId) ?? [props.cardId];
-    const expCardImgs = expCardList.map((cId) => {
-      return (
-        <img
-          src={`${baseImgUrl}/${cId}.png`}
-          alt={altTextName}
-          style={{
-            height: "40svh",
-            width: "30svh",
-            overflow: "hidden",
-            textOverflow: "clip"
-          }}
-        />
-      );
-    });
-    return (
-      <div
-        style={{
-          height: "100%",
-          width: "100%",
-          position: "relative"
-        }}
-      >
-        <div
-          onClick={() => props.setSelected(null)}
-          style={{
-            display: "flex",
-            position: "absolute",
-            left: "0px"
-          }}
-        >
-          {expCardImgs}
-        </div>
-      </div>
-    );
-  }
   return (
     <img
       src={src}
@@ -77,10 +38,50 @@ function Card(props: {idx: number, cardId: string, selected: number | null, setS
   );
 }
 
-export default function CardDisplay(props: {equip: EquipItems}) {
-  const [selected, setSelected] = useState<number|null>(null);
-  console.log(`selected: ${selected}`);
+function ExpandedCardView(props: {deck: string[], selected: number | null, setSelected: Dispatch<StateUpdater<number|null>>}) {
+  if (props.selected === null) {
+    return <div></div>
+  }
+  // Determine if there are associated cards, get images for all
+  const cardId = props.deck[props.selected];
+  const expCardList = cardLinks.get(cardId) ?? [cardId];
+  const expCardImgs = expCardList.map((cId) => {
+    const src = `${baseImgUrl}/${cId}.png`;
+    const altTextName = cId.split("_").map((s) => s.substring(0, 1).toUpperCase() + s.substring(1)).join(" ");
+    return (
+      <img
+        src={src}
+        alt={altTextName}
+        style={{
+          height: "40svh",
+          width: "30svh",
+          overflow: "hidden",
+          textOverflow: "clip"
+        }}
+      />
+    );
+  });
 
+  return (
+    <div
+      onClick={() => props.setSelected(null)}
+      style={{
+        background: "rgb(0 0 0 / 75%)",
+        zIndex: 1,
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      {expCardImgs}
+    </div>
+  );
+}
+
+export default function CardDisplay(props: {equip: EquipItems}) {
   const slots = [
     { iSlot: Slot.TL, item: props.equip.TL },
     { iSlot: Slot.TM, item: props.equip.TM },
@@ -133,6 +134,12 @@ export default function CardDisplay(props: {equip: EquipItems}) {
   deck = deck.concat(equipDef);
   deck = deck.concat(baseDeckDef.slice(equipDef.length));
   deck = deck.concat(equipExtra);
+
+  // Card selection
+  const [selected, setSelected] = useState<number|null>(null);
+  useEffect(() => {
+    setSelected(null);
+  }, [props]);
   const cards = deck.map((c, idx) => <Card idx={idx} cardId={c} selected={selected} setSelected={setSelected}/>);
 
   return (
@@ -140,9 +147,15 @@ export default function CardDisplay(props: {equip: EquipItems}) {
       display: "grid",
       gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
       gridTemplateRows: "1fr 1fr 1fr 1fr",
-      width: "100%"
+      width: "100%",
+      position: "relative"
     }}>
       {cards}
+      <ExpandedCardView
+        deck={deck}
+        selected={selected}
+        setSelected={setSelected}
+      />
     </div>
   )
 }

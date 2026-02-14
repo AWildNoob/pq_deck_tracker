@@ -1,23 +1,9 @@
-import { type StateUpdater, type Dispatch } from "preact/hooks";
+import { type Dispatch } from "preact/hooks";
 import Slot from "../Slot";
 import ItemSelect from "./ItemSelect";
+import type { EquipItems } from "../contexts/GlobalContext";
 
-interface EquipItems {
-  TL: string | null,
-  TM: string | null,
-  TR: string | null,
-  ML: string | null,
-  M: string | null,
-  MR: string | null,
-  BL: string | null,
-  BM: string | null,
-  BR: string | null,
-  weapon: string | null,
-  offhand: string | null,
-  trinket: string | null,
-}
-
-export default function EquipSelect(props: {state: EquipItems, setState: Dispatch<StateUpdater<EquipItems>>}) {
+export default function EquipSelect(props: {state: EquipItems, setState: Dispatch<EquipItems>}) {
   const setTL = (i: string | null) => props.setState({...props.state, TL: i});
   const setTM = (i: string | null) => props.setState({...props.state, TM: i});
   const setTR = (i: string | null) => props.setState({...props.state, TR: i});
@@ -38,55 +24,55 @@ export default function EquipSelect(props: {state: EquipItems, setState: Dispatc
     }}>
       <ItemSelect
         slot={Slot.TL}
-        slotName="Top Left"
+        slotName="Lower Face"
         item={props.state.TL}
         setItem={setTL}
       />
       <ItemSelect
         slot={Slot.TM}
-        slotName="Top Mid"
+        slotName="Upper Face"
         item={props.state.TM}
         setItem={setTM}
       />
       <ItemSelect
         slot={Slot.TR}
-        slotName="Top Right"
+        slotName="Scalp/Head"
         item={props.state.TR}
         setItem={setTR}
       />
       <ItemSelect
         slot={Slot.ML}
-        slotName="Middle Left"
+        slotName="Neck & Shoulder"
         item={props.state.ML}
         setItem={setML}
       />
       <ItemSelect
         slot={Slot.M}
-        slotName="Middle"
+        slotName="Torso"
         item={props.state.M}
         setItem={setM}
       />
       <ItemSelect
         slot={Slot.MR}
-        slotName="Middle Right"
+        slotName="Back/Frame"
         item={props.state.MR}
         setItem={setMR}
       />
       <ItemSelect
         slot={Slot.BL}
-        slotName="Bottom Left"
+        slotName="Arm & Hand"
         item={props.state.BL}
         setItem={setBL}
       />
       <ItemSelect
         slot={Slot.BM}
-        slotName="Bottom Mid"
+        slotName="Lower Body"
         item={props.state.BM}
         setItem={setBM}
       />
       <ItemSelect
         slot={Slot.BR}
-        slotName="Bottom Right"
+        slotName="Foot"
         item={props.state.BR}
         setItem={setBR}
       />

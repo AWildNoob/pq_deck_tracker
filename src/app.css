@@ -36,6 +36,14 @@
   margin-right: 2px;
 }
 
+.slot-desc {
+  font-size: x-large;
+  font-weight: bold;
+  opacity: 0.5;
+  margin-top: 1em;
+  text-align: center;
+}
+
 img:before {
   content: " ";
   display: block;

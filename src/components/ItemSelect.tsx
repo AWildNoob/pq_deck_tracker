@@ -18,15 +18,6 @@ export default function ItemSelect(props: { slot: Slot, slotName: string, item: 
   const itemTags = currItem?.tags?.map((t) => `[${t}]`).join(" ");
 
   const isEmpty = (currItem ?? "") === "";
-  const itemDescBox = <small>{itemDesc}</small>;
-  const slotNameBox = (
-    <b style={{
-      display: "inline",
-      verticalAlign: "center",
-      textAlign: "center"
-    }}>{props.slotName}</b>
-  );
-  const boxContents = isEmpty ? slotNameBox : itemDescBox;
 
   return (
     <div class="bordered-cell" style={{
@@ -55,7 +46,7 @@ export default function ItemSelect(props: { slot: Slot, slotName: string, item: 
           overflowY: "auto",
           marginBottom: "4px"
         }}>
-          <div class="item-desc">{boxContents}</div>
+          <div class={isEmpty ? "slot-desc" : "item-desc"}><small>{isEmpty ? props.slotName : itemDesc}</small></div>
           <small><b>{itemTags ? "Tags: " : ""}</b>{itemTags}</small>
         </div>
       </div>
